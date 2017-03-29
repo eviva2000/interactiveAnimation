@@ -1,0 +1,234 @@
+/*background img*/
+#bg {
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    height: 700px;
+    border: 1px solid black;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.bg1 {
+    background-image: url("../images/scene_1_bg.jpg");
+}
+.bg2 {
+    background-image: url("../images/scene_2_bg.png");
+
+    }
+
+
+/*start and reset botton*/
+
+button{
+    position: absolute;
+    top: 400px;
+    left: 496px;
+    width: 200px;
+    height: 55px;
+    color: whitesmoke;
+    background-color: cornflowerblue;
+    font-size: 24px;
+    font-family: cursive;
+}
+
+#StartBtn {
+    display: block;
+}
+
+#ResetBtn {
+    display: none;
+}
+
+
+
+/*carachters and items*/
+div {
+    position: absolute;
+    background-size:cover;
+}
+
+
+#rabbit {
+    bottom: 100px;
+    left: 50px;
+    width: 85px;
+    height: 125px;
+    z-index: 10;
+    background-image: url("../images/rabbit.png");
+    visibility: visible;
+    transition: all 2s ease;
+}
+
+
+#alice {
+    bottom: 100px;
+    left: -120px;
+    width: 110px;
+    height: 200px;
+    z-index: 10;
+    background-image: url("../images/alice.png");
+    visibility: visible;
+    transition: all 2s ease;
+}
+
+#jumpIntoHoleText {
+    display: none;
+    position: absolute;
+    width: 500px;
+    color: #fff;
+    left: 300px;
+    top: 210px;
+}
+
+#hole {
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background: rgba(255, 0, 0, 0);
+    bottom: 100px;
+    right: 257px;
+    cursor: pointer;
+}
+
+
+#drinkme {
+    background-image: url("../images/drinkme.png");
+    width: 160px;
+    height: 150px;
+    z-index: 10;
+    bottom: 92px;
+    right: 400px;
+    display: none;
+}
+.visibledrink{
+   display: block!important;
+}
+
+#eatme{
+    background-image: url("../images/eatme.png");
+    width: 100px;
+    height: 156px;
+    z-index: 10;
+    bottom: 92px;
+    right: 300px;
+    display: none;
+}
+.visibleeat{
+   display: block!important;
+}
+
+
+/*animations*/
+
+.characterMove {
+    animation: characterMove 3s forwards;
+}
+
+@keyframes characterMove {
+    10% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    70% {
+        transform: rotate(10deg);
+    }
+    90% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+.characterWait {
+    animation: characterWait 3s linear infinite;
+}
+
+@keyframes characterWait {
+  25%{
+        transform: rotate(-10deg);
+    }
+    0%,50%,100%{transform: rotate(0deg);}
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+
+.rabbitMoveTowardsHole {
+    left: 333px !important;
+}
+
+.rabbitJumpingUpDown {
+    animation: rabbitJumpingUpDown .5s linear 3;
+}
+
+.rabbitJumpingIntoHole{
+    animation: rabbitJumpingIntoHole 1.5s linear forwards;
+}
+
+.aliceMoveTowardsHole {
+    left: 221px !important;
+}
+
+.aliceJumpingIntoHole {
+    left: 280px !important;
+    animation: rabbitJumpingIntoHole 1.5s linear forwards;
+}
+
+
+@keyframes rabbitJumpingUpDown {
+    0% {
+        bottom: 100px;
+    }
+    50% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 100px;
+    }
+}
+
+@keyframes rabbitJumpingIntoHole {
+    0% {
+        bottom: 100px;
+        left: 333px;
+    }
+    20% {
+        bottom: 170px;
+        left: 430px;
+    }
+    50% {
+        bottom: 250px;
+        left: 490px;
+    }
+    70% {
+        bottom: 160px;
+        left: 540px;
+    }
+    100% {
+        bottom: 40px;
+        left: 600px;
+        opacity: 0;
+    }
+}
+
+
+
+.alicescaledown{
+    transform: scale(.5);
+}
+
+.alicescaleup{
+    transform: scale(2);
+}
+
+
